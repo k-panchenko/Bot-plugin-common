@@ -1,5 +1,6 @@
 import abc
-
+from aiohttp import web
 
 class BasePluginHandler(abc.ABC):
-    pass
+    async def hanlde(request: web.Request) -> None:
+        pass
