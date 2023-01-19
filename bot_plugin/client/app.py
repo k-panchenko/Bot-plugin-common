@@ -12,3 +12,8 @@ class AppClient:
         async with aiohttp.ClientSession(self._app_url) as session:
             async with session.post(AppRoutes.PLUGIN_MODULE, json=request.to_json()) as response:
                 response.raise_for_status()
+
+    async def unplug(self):
+        async with aiohttp.ClientSession(self._app_url) as session:
+            async with session.post(AppRoutes.UNPLUG_MODULE) as response:
+                response.raise_for_status()
