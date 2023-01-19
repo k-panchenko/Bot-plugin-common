@@ -1,2 +1,2 @@
-# Simcord Bot Common
+# Bot plugin common
 

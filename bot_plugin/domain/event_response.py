@@ -1,6 +1,7 @@
+import enum
 from dataclasses import dataclass
 from typing import Union
-import enum
+
 
 class CallbackQueryMethod(str, enum.Enum):
     CREATE = 'CREATE'
@@ -8,6 +9,7 @@ class CallbackQueryMethod(str, enum.Enum):
     SELECT_MULTIPLE = 'SELECT_MULTIPLE'
     EDIT = 'EDIT'
     DELETE = 'DELETE'
+
 
 @dataclass
 class CallbackQueryEvent:
@@ -22,4 +24,3 @@ class MessageMethod(str, enum.Enum):
 class MessageEvent:
     user_id: Union[str, int]
     text: str
-    

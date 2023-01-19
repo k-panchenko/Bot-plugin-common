@@ -1,7 +1,7 @@
 from typing import Final
 
 
-class Module:
-    _BASE: Final[str] = '/module'
-    PLUGIN: Final[str] = _BASE + '/plugin'
-    UNPLUG: Final[str] = _BASE + '/unplug'
+class AppRoutes:
+    _MODULE: Final[str] = '/module'
+    PLUGIN_MODULE: Final[str] = _MODULE + '/plugin'
+    UNPLUG_MODULE: Final[str] = _MODULE + '/unplug'
