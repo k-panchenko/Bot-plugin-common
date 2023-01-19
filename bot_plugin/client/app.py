@@ -10,7 +10,7 @@ class AppClient:
 
     async def plugin(self, request: PluginRequest):
         async with aiohttp.ClientSession(self._app_url) as session:
-            async with session.post(AppRoutes.PLUGIN_MODULE, json=request.to_json()) as response:
+            async with session.post(AppRoutes.PLUGIN_MODULE, data=request.to_json()) as response:
                 response.raise_for_status()
 
     async def unplug(self):
