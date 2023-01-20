@@ -13,8 +13,8 @@ class PluginRequest(JsonSerializable):
     context: PluginContext
     access_type: AccessType = AccessType.PUBLIC
 
-    @staticmethod
-    def from_json(json_dict: Dict[str, Any]):
+    @classmethod
+    def from_json(cls, json_dict: Dict[str, Any]) -> Self:
         return {
             'url' in json_dict: lambda: PluginRequest(**json_dict),
             'resource_id' in json_dict: lambda: PluginContext(**json_dict)
