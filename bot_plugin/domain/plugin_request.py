@@ -3,17 +3,15 @@ from dataclasses import dataclass
 from typing import Self, Any, Dict
 
 from bot_plugin.domain.access_type import AccessType
+from bot_plugin.domain.base.serializable import JsonSerializable
 from bot_plugin.domain.plugin_context import PluginContext
 
 
 @dataclass
-class PluginRequest:
+class PluginRequest(JsonSerializable):
     url: str
     context: PluginContext
     access_type: AccessType = AccessType.PUBLIC
-
-    def to_json(self) -> str:
-        return json.dumps(self, default=lambda o: o.__dict__)
 
     @staticmethod
     def from_json(json_dict: Dict[str, Any]):
