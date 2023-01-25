@@ -1,9 +1,9 @@
 from dataclasses import dataclass, field
-from typing import Optional, List, Self
+from typing import Optional, List, Self, Dict
 
 
 @dataclass
 class PluginContext:
-    resource_id: str
+    localized_resources: Dict[str, str]
     path: Optional[str] = None
     children: List[Self] = field(default_factory=list)
