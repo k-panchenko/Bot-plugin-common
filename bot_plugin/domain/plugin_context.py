@@ -6,4 +6,4 @@ from typing import Optional, List, Self, Dict
 class PluginContext:
     localized_resources: Dict[str, str]
     path: Optional[str] = None
-    children: List[Self] = field(default_factory=list)
+    children: List[List[Self]] = field(default_factory=list)
